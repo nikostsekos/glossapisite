@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>glossAPI - A powerful library toolkit for natural language processing</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <!-- Background animation container with higher z-index for visibility -->
+  <div id="background-animation" class="background-animation"></div>
+
+
+  <div class="app">
+    <header class="header">
+      <div class="container header-container">
+        <a href="/" class="logo">
+          <div class="logo-box">glossAPI</div>
+        </a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#community" class="nav-link">Community</a></li>
+            <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1 class="hero-title">[γlo'sapi]</h1>
+          <p class="hero-subtitle">Natural Language Processing was never that easy</p>
+          <!-- Terminal that appears automatically -->
+          <div id="terminal" class="terminal-box">
+            <div class="terminal-header">
+              <div class="terminal-title">Install glossAPI</div>
+            </div>
+            <div class="terminal-content">
+              <!-- User input line -->
+              <div class="terminal-line">
+                <span class="terminal-user">user@glossapi</span><span class="terminal-tilde">:</span><span class="terminal-path">~</span><span class="terminal-dollar">$</span>
+                <span class="terminal-command" id="typed-command"></span>
+              </div>
+              
+              <!-- Output lines that will appear during the animation -->
+              <div id="terminal-output-container" class="terminal-output-container">
+                <!-- Each line will be added dynamically via JavaScript -->
+              </div>
+              
+              <!-- Actual progress bar -->
+              <div id="progress-container" class="progress-container" style="display: none;">
+                <div class="progress-info">
+                  <span id="progress-text">Downloading glossapi.tar.gz</span>
+                  <span id="progress-percentage">0%</span>
+                </div>
+                <div class="progress-bar-container">
+                  <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <div class="progress-stats">
+                  <span id="progress-stats">0.0/58.3 kB</span>
+                  <span id="progress-speed">0.0 MB/s</span>
+                </div>
+              </div>
+            </div>
+            <div class="terminal-footer">
+              <button id="copy-command" class="terminal-copy-btn">Copy to Clipboard</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="what-is" id="about">
+        <div class="container">
+          <h2 class="section-title">What is glossAPI?</h2>
+          <div class="section-content">
+            <p>
+              <strong>GlossAPI</strong> is an open-source toolkit created by <strong>GFOSS</strong> that converts raw Greek text — literature, legislation, science and culture — into clean structured and intelligent data.
+            </p>
+            <p>
+              Whether you are training language models, building a smarter search, or exploring the Greek digital heritage, GlossAPI provides you with the tools and data sets to build open, ethical, and scalable products.
+            </p>
+            <p>
+              Get involved and join the growing community of researchers, developers and digital humanists using GlossAPI to ensure the future of Greek language in AI.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="team" id="team">
+        <div class="container">
+          <h2 class="section-title">Our Team</h2>
+          <div class="team-members">
+            <div class="team-member">
+              <div class="team-member-info">
+                <h3 class="team-member-name">Foivos Karounos</h3>
+                <p class="team-member-title">Team Lead</p>
+                <div class="team-member-details">
+                  <p>Foivos Karounos has studied Computer Science and Psychology and is interested in the development of the technological ecosystem in Greece. He has taken on various roles related to business strategy, cryptocurrency performance forecasting, and research in epistemology. His role in the glossAPI team is that of the lead Software Engineer.</p>
+                  <div class="team-member-skills">
+                    <span class="skill-tag">Software Architecture</span>
+                    <span class="skill-tag">Project Management</span>
+                    <span class="skill-tag">Language Technologies</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            
+            <div class="team-member">
+              <div class="team-member-info">
+                <h3 class="team-member-name">Ioanna Moura</h3>
+                <p class="team-member-title">Linguistics Specialist</p>
+                <div class="team-member-details">
+                  <p>Ioanna Moura is a linguist and a trainee interpreter in Greek Sign Language (GSL). She completed her undergraduate studies in Greek Philology and her postgraduate studies in Language Technology at the National and Kapodistrian University of Athens. She has also worked at the National Hellenic Research Foundation in the field of archival research and was a researcher at Istorima. She joined the team at the Open Technologies Alliance (GFOSS) in April 2024.</p>
+                  <div class="team-member-skills">
+                    <span class="skill-tag">Greek Philology</span>
+                    <span class="skill-tag">Language Technology</span>
+                    <span class="skill-tag">Greek Sign Language</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            
+            <div class="team-member">
+              <div class="team-member-info">
+                <h3 class="team-member-name">Myrsini Ioannou</h3>
+                <p class="team-member-title">Software Engineer</p>
+                <div class="team-member-details">
+                  <p>Myrsini Ioannou studied Applied Mathematics and Physical Sciences at the National Technical University of Athens and holds a Master's degree in Sound and Music Computing from Universitat Pompeu Fabra in Barcelona. She has worked as a Data Scientist and joined the glossAPI team in March 2025 as a Software Engineer, where she focuses on the development and optimization of natural language processing technologies.</p>
+                  <div class="team-member-skills">
+                    <span class="skill-tag">Applied Mathematics</span>
+                    <span class="skill-tag">Sound Computing</span>
+                    <span class="skill-tag">NLP Optimization</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            
+            <div class="team-member">
+              <div class="team-member-info">
+                <h3 class="team-member-name">Nikos Vidras</h3>
+                <p class="team-member-title">Software Engineer</p>
+                <div class="team-member-details">
+                  <p>Nikos Vidras is a graduate of the National and Kapodistrian University of Athens, with a keen interest in the intersection of language and technology. He brings a thoughtful and detail-oriented approach to his work. At glossAPI, he contributes to the design and development of language-focused tools and systems.</p>
+                  <div class="team-member-skills">
+                    <span class="skill-tag">Computational Linguistics</span>
+                    <span class="skill-tag">NLP Systems</span>
+                    <span class="skill-tag">API Development</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            
+            <div class="team-member">
+              <div class="team-member-info">
+                <h3 class="team-member-name">Nikos Tsekos</h3>
+                <p class="team-member-title">Software Engineer</p>
+                <div class="team-member-details">
+                  <p>Nikos Tsekos is an undergraduate student in Computer Science with a broad interest in Machine Learning and Artificial Intelligence. He is especially intrigued by how these technologies can be applied to solve real-world problems in innovative ways. Nikos joined the glossAPI team in September 2024.</p>
+                  <div class="team-member-skills">
+                    <span class="skill-tag">Computational Linguistics</span>
+                    <span class="skill-tag">NLP Systems</span>
+                    <span class="skill-tag">Machine Learning</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="community" id="community">
+        <div class="container">
+          <h2 class="section-title">Join Our Community</h2>
+          <div class="cards">
+            <div class="card">
+              <div class="card-icon github-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <h3 class="card-title">GitHub</h3>
+              <p class="card-description">Check out our source code, contribute, and follow our development.</p>
+              <a href="https://github.com/eellak/glossAPI" class="card-link">Visit Repository <span class="external-icon">↗</span></a>
+            </div>
+            <div class="card">
+              <div class="card-icon huggingface-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7">
+                  <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                  <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="card-title">Hugging Face</h3>
+              <p class="card-description">Explore our datasets</p>
+              <a href="https://huggingface.co/glossapi" class="card-link">Visit Hugging Face <span class="external-icon">↗</span></a>
+            </div>
+            <div class="card">
+              <div class="card-icon discord-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 127.14 96.36"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" fill="currentColor" opacity="0.7"/></svg>
+              </div>
+              <h3 class="card-title">Discord</h3>
+              <p class="card-description">Join our community for discussions, support, and updates.</p>
+              <a href="https://discord.gg/ejMS2uvMgQ" class="card-link">Join Discord <span class="external-icon">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy;2025 glossAPI contributors. Licensed under the EUPL v1.2. </p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
